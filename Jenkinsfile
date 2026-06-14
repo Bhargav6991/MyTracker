@@ -45,7 +45,7 @@ pipeline {
 
         stage('Build & Test') {
             steps {
-                sh 'mvn clean test package'
+                sh 'mvn clean package'
             }
         }
 
@@ -54,6 +54,7 @@ pipeline {
                 withSonarQubeEnv('SonarQube') {
                     sh '''
                         mvn sonar:sonar \
+                        -Dsonar.host.url=https://sonarcloud.io \
                         -Dsonar.organization=Bhargavorg \
                         -Dsonar.projectKey=bhargavorg_tracker \
                         -Dsonar.projectName=Tracker
