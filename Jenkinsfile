@@ -25,7 +25,7 @@ pipeline {
                     sh '''
                         mvn sonar:sonar \
                         -Dsonar.host.url=https://sonarcloud.io \
-                        -Dsonar.organization=Bhargavorg \
+                        -Dsonar.organization=bhargavorg \
                         -Dsonar.projectKey=bhargavorg_tracker \
                         -Dsonar.projectName=Tracker
                     '''
